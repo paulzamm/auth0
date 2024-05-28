@@ -1,0 +1,18 @@
+<div class="container mt-2 animate__animated animate__fadeIn">
+    <h1 class="display-4">User Profile</h1>
+    <hr>
+    <div class="container animate__animated animate__fadeIn" *ngIf="_auth.user$ | async as user">
+        <div class="row">
+            <div class="card w-25 col">
+                <div class="card-body d-flex justify-content-center">
+                    <img src="{{user.picture}}">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4>Name: <small>{{user.name}}</small></h4>
+                <hr>
+                <h4>Email: <small>{{user.email}}</small></h4>
+            </div>
+        </div>
+    </div>
+</div>

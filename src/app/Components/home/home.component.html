@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid mt-2 animate__animated animate__fadeIn">
+    <div class="container">
+        <div *ngIf="(_auth.isAuthenticated$)">
+            <div *ngIf="_auth.user$ | async as user">
+                <h1 class="display-4 animated fadeIn fast">Welcome {{user.name}}!</h1>
+                <hr>
+                <p class="lead animated fadeIn fast">Session started successfully.</p>
+            </div>
+        </div>
+        <div *ngIf="!(_auth.isAuthenticated$ | async)">
+            <h1 class="display-4 animated fadeIn fast">Welcome!</h1>
+            <hr>
+            <p class="lead animated fadeIn fast">You are not logged in, click the login link above.</p>
+        </div>
+    </div>
+</div>
