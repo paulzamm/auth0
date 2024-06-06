@@ -1,17 +1,24 @@
 <div class="container mt-2 animate__animated animate__fadeIn">
-    <h1 class="display-4">User Profile</h1>
+    <h1 class="display-4">Buscar Ruta:</h1>
     <hr>
-    <div class="container animate__animated animate__fadeIn" *ngIf="_auth.user$ | async as user">
-        <div class="row">
-            <div class="card w-25 col">
-                <div class="card-body d-flex justify-content-center">
-                    <img src="{{user.picture}}">
+    <div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar ruta" aria-label="Buscar ruta" aria-describedby="button-addon2" (keyup.enter)="buscarRuta(buscarTexto.value)" #buscarTexto>
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="buscarRuta(buscarTexto.value)">Buscar</button>
+        </div>
+    </div>
+    <div class=" row row-cols-3 ">
+        <div class="col animated fadeIn " *ngFor="let ruta of rutas">
+            <div class="card mb-3 animate__animated animate__slideInUp ">
+                <div class="card-body text ">
+                    <h5 class="card-title ">Ciudad Origen: {{ ruta.ciudad_origen }}</h5>
+                    <h5 class="card-title ">Ciudad Destino: {{ ruta.ciudad_destino }}</h5>
+                    <h5 class="card-title ">Precio: {{ ruta.precio }}</h5>
+                    <h5 class="card-title ">Tipo: {{ ruta.tipo }}</h5>
+                    <div class="d-grid gap-2 ">
+                        <button type="button " class="btn btn-outline-primary" (click)="verRuta(ruta.id)">Ver más</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <h4>Name: <small>{{user.name}}</small></h4>
-                <hr>
-                <h4>Email: <small>{{user.email}}</small></h4>
             </div>
         </div>
     </div>

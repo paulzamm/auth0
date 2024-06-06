@@ -1,0 +1,32 @@
+<div class="jumbotron jumbotron-fluid mt-2 animate__animated animate__fadeIn">
+    <div class="container">
+        <h1 class="display-4 animated fadeIn fast">Rutas</h1>
+        <hr>
+        <div class="dropdown lead animated fadeIn fast">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Opciones
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="mostrarRutas('Todos')">Todos</a></li>
+                <li><a class="dropdown-item" (click)="mostrarRutas('Interno')">Interno</a></li>
+                <li><a class="dropdown-item" (click)="mostrarRutas('Externo')">Externo</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-2">
+        <div class="row row-cols-3 ">
+            <div class="col animated fadeIn" *ngFor="let ruta of rutas">
+                <div class="card mb-3 animate__animated animate__slideInUp">
+                    <div class="card-body text">
+                        <h5 class="card-title">Ciudad Origen: {{ ruta.ciudad_origen }}</h5>
+                        <h5 class="card-title">Ciudad Destino: {{ ruta.ciudad_destino }}</h5>
+                        <h5 class="card-title">Precio: {{ ruta.precio }}</h5>
+                        <h5 class="card-title">Tipo: {{ ruta.tipo }}</h5>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-primary" (click)="verRuta(ruta.id)">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

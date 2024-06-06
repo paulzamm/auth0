@@ -1,0 +1,24 @@
+<div class="container mt-3">
+    <div class="container">
+        <div class="row animated fadeIn">
+            <div class="row row-cols-3 ">
+                <div class="col animated fadeIn">
+                    <div class="card mb-3 animate__animated animate__slideInUp">
+                        <div class="card-body text">
+                            <h5 class="card-title">Ciudad Origen: {{ ruta.ciudad_origen }}</h5>
+                            <h5 class="card-title">Ciudad Destino: {{ ruta.ciudad_destino }}</h5>
+                            <h5 class="card-title">Precio: {{ ruta.precio }}</h5>
+                            <h5 class="card-title">Tipo: {{ ruta.tipo }}</h5>
+                            <h5 class="card-title">Descripcion: {{ ruta.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class=" d-grid gap-2 ">
+                    <a [routerLink]="['/rutas']" class="btn btn-outline-danger">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

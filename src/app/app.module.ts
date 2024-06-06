@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Components/home/home.component';
-import { PreciosComponent } from './Components/precios/precios.component';
 import { ProtegidaComponent } from './Components/protegida/protegida.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
+import { InfoRutaComponent } from './Components/info-ruta/info-ruta.component';
+import { RutasComponent } from './Components/rutas/rutas.component';
 
 
 @NgModule({
@@ -15,8 +16,9 @@ import { provideAuth0 } from '@auth0/auth0-angular';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    PreciosComponent,
-    ProtegidaComponent
+    ProtegidaComponent,
+    InfoRutaComponent,
+    RutasComponent
   ],
   imports: [
     BrowserModule,
